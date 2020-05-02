@@ -1,0 +1,24 @@
+hostname {{hostname}}
+!
+router ospf {{ ospf.process_id }}
+ router-id {{ospf.router_id}}
+ log-adjacency-changes
+!
+{% for intf, intf_attrs in interfaces.items() %}
+interface {{intf}}
+{% if intf_attrs.ip_address is none %}
+ no ip address
+{% else %}
+ ip address {{intf_attrs.ip_address}} {{intf_attrs.subnet_mask}}
+{% endif %}
+{% if intf in ospf.interfaces %}
+ ip ospf {{ ospf.process_id }} area {{ ospf.area_id }}
+{% endif %}
+{% if intf_attrs.is_enable == False %}
+ shutdown
+{% else %}
+ no shutdown
+{% endif %}
+ !
+!
+{% endfor %}

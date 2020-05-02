@@ -1,0 +1,51 @@
+---
+- name: Extract network device facts using Batfish and Ansible
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+    - batfish.base
+
+  tasks:
+
+    - name: Setup connection to Batfish service
+      bf_session:
+        host: localhost
+        name: local_batfish
+
+    - name: Initialize the example network
+      bf_init_snapshot:
+        network: cicd-demo
+        snapshot: new-config
+        snapshot_data: snapshot/
+        overwrite: true  
+
+    - name: Batfish Assertions
+      bf_assert:
+        assertions:
+          - type: assert_no_incompatible_ospf_sessions
+            name: Confirm that all OSPF neighbors are established
+          - type: assert_all_flows_succeed
+            name: confirm reachibility between R1 and R3 loopbacks
+            parameters:
+              startLocation: '@enter(router1[Loopback1])'
+              headers:
+                dstIps: '3.3.3.3'
+                ipProtocols: 'tcp'
+                dstPorts: '22'
+      register: bf_assert
+      ignore_errors: True
+
+    - name: Display assertion result
+      debug:
+        var: bf_assert
+
+
+
+    # - name: Retrive Batfish facts
+    #   bf_extract_facts:
+    #     output_directory: data/bf_facts
+    #   register: bf_facts
+...
+
+  

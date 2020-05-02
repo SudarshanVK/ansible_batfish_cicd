@@ -1,0 +1,12 @@
+---
+  - name: Generate Router configuration files
+    hosts: cisco
+    gather_facts: false
+
+    tasks:
+
+      - name: Generate config from jinja
+        template:
+          src: templates/configuration.j2
+          dest: snapshot/configs/{{ inventory_hostname }}.cfg
+        tags: hostname

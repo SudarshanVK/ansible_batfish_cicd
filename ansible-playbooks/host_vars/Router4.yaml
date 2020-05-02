@@ -1,0 +1,35 @@
+hostname: Router4
+
+interfaces:
+  loopback4:
+    ip_address: 4.4.4.4
+    subnet_mask: 255.255.255.255
+    is_enable: True
+
+  FastEthernet0/0:
+    ip_address: 192.168.1.194
+    subnet_mask: 255.255.255.0
+    is_enable: True
+  
+  FastEthernet1/0:
+    ip_address: 10.10.14.4
+    subnet_mask: 255.255.255.0
+    is_enable: True
+
+  FastEthernet2/0:
+    ip_address: 10.10.34.4 
+    subnet_mask: 255.255.255.0
+    is_enable: True
+
+  FastEthernet3/0:
+    ip_address: 
+    subnet_mask: 
+    is_enable: False
+
+ospf:
+  process_id: 1
+  router_id: 4.4.4.4
+  area_id: 0
+  interfaces:
+    - FastEthernet1/0
+    - FastEthernet2/0

@@ -1,0 +1,14 @@
+---
+- name: Config backup
+  hosts: cisco
+  gather_facts: False
+
+  tasks:
+
+  - name: get backup
+    ios_config:
+      backup: yes
+      backup_options:
+        filename: "{{ inventory_hostname }}.txt"
+        dir_path: /home/sudarshanv/pipeline/ansible-playbooks/snapshot/configs
+    
