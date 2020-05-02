@@ -1,9 +1,13 @@
 stages:
-  - prepare
+  - generate
   - validate
   - execute
 
 before_script:
   - source ansible2.9.6/bin/activate
-  - pip3 freeze
+
+Generate device configurations:
+  stage: generate
+  script:
+    - pip3 freeze
 
