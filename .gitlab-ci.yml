@@ -4,5 +4,5 @@ stages:
 
 Generate the configuration:
   stage: generate
-  script: ll
+  script: pwd
   
