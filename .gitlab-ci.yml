@@ -1,0 +1,8 @@
+stages:
+  - generate
+
+
+Generate the configuration:
+  stage: generate
+  script: ll
+  
