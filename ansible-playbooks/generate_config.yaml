@@ -7,6 +7,6 @@
 
       - name: Generate config from jinja
         template:
-          src: templates/configuration.j2
-          dest: snapshot/configs/{{ inventory_hostname }}.cfg
+          src: /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/templates/configuration.j2
+          dest: /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/snapshot/configs/{{ inventory_hostname }}.cfg
         tags: hostname
