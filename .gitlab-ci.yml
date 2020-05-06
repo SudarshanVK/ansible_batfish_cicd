@@ -30,7 +30,7 @@ Generate the configuration:
   stage: generate
   script: 
     - pwd
-    - which python
+    - 'python --version'
 
 
 
