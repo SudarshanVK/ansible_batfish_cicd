@@ -1,5 +1,5 @@
 variables:
-  GIT_CLONE_PATH: /home/sudarshan
+  GIT_CLONE_PATH: /home/gitlab-runner/builds/
 
 stages:
   - generate
