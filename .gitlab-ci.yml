@@ -6,7 +6,7 @@ variables:
   # Change pip's cache directory to be inside the project directory since we can
   # only cache local items.
   # PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  GIT_CLONE_PATH: /home/gitlab-runner/builds/batfishpipeline
+  GIT_CLONE_PATH: /var/lib/gitlab-runner/builds/batfishpipeline
 
 stages:
   - generate
@@ -30,7 +30,7 @@ Generate the configuration:
   stage: generate
   script: 
     - pwd
-    - ll
+    - ls -al
     - python --version
     # - 'ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
     #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini'
