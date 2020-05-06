@@ -2,11 +2,11 @@ stages:
   - generate
   - validate
 
-before_script:
-  - source ~/ansible2.9.6/bin/activate
+# before_script:
+#   - source ~/ansible2.9.6/bin/activate
 
 Generate device configurations:
   stage: generate
   script:
-    - pip3 freeze
+    - ll
 
