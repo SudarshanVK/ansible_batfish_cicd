@@ -32,6 +32,7 @@ Generate the configuration:
     - pwd
     - ls -al
     - python --version
+    - ansible --version
     # - 'ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
     #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini'
 
