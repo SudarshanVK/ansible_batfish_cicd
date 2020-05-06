@@ -9,5 +9,7 @@ before_script:
 
 Generate the configuration:
   stage: generate
-  script: pwd
+  script:
+    - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
+      -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
   
