@@ -1,5 +1,7 @@
 stages:
   - generate
+  - validate
+  - configure
 
 before_script:
   - source /home/sudarshanv/ansible2.9.6/bin/activate
@@ -7,39 +9,11 @@ before_script:
 Generate the configuration:
   stage: generate
   script: 
-    # - pwd
-    # - ls -al
-    # # - python --version
-    # # - ansible --version
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
 
+Validate the configuration:
+  stage: validate
+  script:
+    - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
-
-
-
-# variables:
-#   # Change pip's cache directory to be inside the project directory since we can
-#   # only cache local items.
-#   # PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  
-
-# stages:
-#   - generate
-
-# # cache:
-# #   paths:
-# #     - .cache/pip
-# #     - /home/gitlab-runner/ansible2.9.6
-
-# before_script:
-#   - source /home/sudarshan/ansible2.9.6/bin/activate
-#   - ansible --version
-#   - python -V               # Print out python version for debugging
-
-
-# Generate the configuration:
-#   stage: generate
-#   script: pwd
-    # - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
-    #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
   
