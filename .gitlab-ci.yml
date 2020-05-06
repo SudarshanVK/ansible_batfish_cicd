@@ -30,6 +30,7 @@ Generate the configuration:
   stage: generate
   script: 
     - pwd
+    - ls -al
     # - python --version
     # - ansible --version
     # - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
