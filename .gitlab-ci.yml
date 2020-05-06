@@ -18,9 +18,9 @@ before_script:
   - python -V               # Print out python version for debugging
 
 
-# Generate the configuration:
-#   stage: generate
-#   script:
-#     - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
-#       -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
+Generate the configuration:
+  stage: generate
+  script: pwd
+    # - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
+    #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
   
