@@ -30,7 +30,6 @@ Generate the configuration:
   stage: generate
   script: 
     - pwd
-    - ls -al
     - python --version
     - ansible --version
     # - 'ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
