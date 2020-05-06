@@ -4,10 +4,9 @@ variables:
 stages:
   - generate
 
-# cache:
-#   paths:
-#     - 
-#     - venv/
+cache:
+  paths:
+    - /home/gitlab-runner/ansible2.9.6
 
 Generate the configuration:
   stage: generate
