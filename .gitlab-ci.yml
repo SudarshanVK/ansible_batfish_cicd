@@ -4,10 +4,15 @@ variables:
 stages:
   - generate
 
+# cache:
+#   paths:
+#     - 
+#     - venv/
+
 Generate the configuration:
   stage: generate
   script:
-    - source ~/ansible2.9.6/bin/activate
+    - source /home/gitlab-runner/ansible2.9.6/bin/activate
     - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
       -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
   
