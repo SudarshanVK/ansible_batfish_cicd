@@ -16,4 +16,8 @@ Validate the configuration:
   script:
     - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
-  
+Configures the devices:
+  stage: configure
+  script:
+    - ansible-playbook ansible-playbooks/configure_device.yaml -i ansible-playbooks/hosts.ini
+  only: master
