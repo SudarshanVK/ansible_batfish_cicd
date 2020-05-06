@@ -20,4 +20,5 @@ Configures the devices:
   stage: configure
   script:
     - ansible-playbook ansible-playbooks/configure_device.yaml -i ansible-playbooks/hosts.ini
-  only: master
+  only: 
+    - master
