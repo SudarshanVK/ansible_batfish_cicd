@@ -1,3 +1,6 @@
+variables:
+  GIT_CLONE_PATH: /home/sudarshan
+
 stages:
   - generate
 
