@@ -1,7 +1,6 @@
 stages:
   - generate
   - validate
-  - execute
 
 before_script:
   - source ~/ansible2.9.6/bin/activate
