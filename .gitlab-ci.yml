@@ -1,5 +1,5 @@
 variables:
-  GIT_CLONE_PATH: /home/gitlab-runner/builds/
+  GIT_CLONE_PATH: /home/gitlab-runner/builds/batfishpipeline
 
 stages:
   - generate
