@@ -1,6 +1,8 @@
 stages:
   - generate
 
+before_script:
+  - source ~/ansible2.9.6/bin/activate
 
 Generate the configuration:
   stage: generate
