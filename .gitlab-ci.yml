@@ -6,7 +6,7 @@ variables:
   # Change pip's cache directory to be inside the project directory since we can
   # only cache local items.
   # PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  # GIT_CLONE_PATH: /home/gitlab-runner/builds/batfishpipeline
+  GIT_CLONE_PATH: /home/gitlab-runner/builds/batfishpipeline
 
 stages:
   - generate
@@ -21,16 +21,18 @@ stages:
 #     - .cache/pip
 #     - venv/
 
-# before_script:
-#   - python -V               # Print out python version for debugging
-#   - virtualenv -p python3 venv
-#   - source venv/bin/activate
+before_script:
+  # - python -V               # Print out python version for debugging
+  # - virtualenv -p python3 venv
+  - source /home/sudarshanv/ansible2.9.6/bin/activate
 
 Generate the configuration:
   stage: generate
   script: 
     - pwd
-    - 'python --version'
+    - python --version
+    # - 'ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
+    #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini'
 
 
 
@@ -59,6 +61,6 @@ Generate the configuration:
 # Generate the configuration:
 #   stage: generate
 #   script: pwd
-    - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
-      -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
+    # - ansible-playbook /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/generate_config.yaml 
+    #   -i /home/gitlab-runner/builds/batfishpipeline/ansible-playbooks/hosts.ini
   
