@@ -12,4 +12,4 @@
         backup_options:
           filename: "{{ inventory_hostname }}.cfg"
           dir_path: /home/sudarshanv/pipeline/ansible-playbooks/backup
-        save_when: Changed
+        save_when: changed
