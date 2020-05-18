@@ -26,7 +26,7 @@
           - type: assert_no_incompatible_ospf_sessions
             name: Confirm that all OSPF neighbors are established
           - type: assert_all_flows_succeed
-            name: confirm reachibility between R1 and R3 loopbacks
+            name: Confirm reachibility between R1 and R3 loopbacks on port 22
             parameters:
               startLocation: '@enter(router1[loopback1])'
               headers:
@@ -39,13 +39,6 @@
     - name: Display assertion result
       debug:
         var: bf_assert
-
-
-
-    # - name: Retrive Batfish facts
-    #   bf_extract_facts:
-    #     output_directory: data/bf_facts
-    #   register: bf_facts
 ...
 
   

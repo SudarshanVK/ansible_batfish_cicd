@@ -13,3 +13,4 @@
           filename: "{{ inventory_hostname }}.cfg"
           dir_path: /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/backup
         save_when: changed
+...
