@@ -22,7 +22,7 @@ interfaces:
     is_enable: True
 
   FastEthernet3/0:
-    ip_address: 
+    ip_address: 6.6.6.6
     subnet_mask: 
     is_enable: False
 

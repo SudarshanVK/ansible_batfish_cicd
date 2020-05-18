@@ -7,7 +7,7 @@
 
     - name: ios config replace
       ios_config:
-        src: snapshot/configs/{{inventory_hostname}}.cfg
+        src: /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/snapshot/configs/{{ inventory_hostname }}.cfg
         backup: yes
         backup_options:
           filename: "{{ inventory_hostname }}.cfg"
