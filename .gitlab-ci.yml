@@ -9,7 +9,7 @@ before_script:
 Generate the configuration:
   stage: generate
   script: 
-    - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
+    - ansible-playbook /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/generate_config.yaml -i /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/hosts.ini
 
 Validate the configuration:
   stage: validate
