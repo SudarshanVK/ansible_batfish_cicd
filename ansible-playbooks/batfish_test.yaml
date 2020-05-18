@@ -28,7 +28,7 @@
           - type: assert_all_flows_succeed
             name: confirm reachibility between R1 and R3 loopbacks
             parameters:
-              startLocation: '@enter(router1[Loopback1])'
+              startLocation: '@enter(router1[1.1.1.1])'
               headers:
                 dstIps: '3.3.3.3'
                 ipProtocols: 'tcp'
