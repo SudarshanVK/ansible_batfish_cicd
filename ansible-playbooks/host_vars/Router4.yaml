@@ -11,10 +11,10 @@ interfaces:
     subnet_mask: 255.255.255.0
     is_enable: True
   
-  # FastEthernet1/0:
-  #   ip_address: 10.10.14.4
-  #   subnet_mask: 255.255.255.0
-  #   is_enable: True
+  FastEthernet1/0:
+    ip_address: 10.10.14.4
+    subnet_mask: 255.255.255.0
+    is_enable: True
 
   FastEthernet2/0:
     ip_address: 10.10.34.4 
