@@ -6,13 +6,14 @@ stages:
   - validate
   - configure
 
-# before_script:
-#   - source /home/sudarshan/ansible2.9.6/bin/activate
+before_script:
+  - source ansible2.9/bin/activate
 
 Generate the configuration:
   stage: generate
   script: 
     - python -V
+    - ansible --version
 #     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
 #   # artifacts:
 #   #   paths: /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/snapshot/configs/*.cfg
