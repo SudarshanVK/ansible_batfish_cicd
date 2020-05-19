@@ -31,7 +31,7 @@ ospf:
   router_id: 1.1.1.1
   area_id: 0
   interfaces:
-    # - FastEthernet1/0
+    - FastEthernet1/0
     - FastEthernet2/0
     - loopback1
 
