@@ -7,7 +7,7 @@ stages:
   - configure
 
 before_script:
-  - source ansible2.9/bin/activate
+  - source /home/sudarshan/ansible2.9/bin/activate
 
 Generate the configuration:
   stage: generate
