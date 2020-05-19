@@ -22,8 +22,8 @@ interfaces:
     is_enable: True
 
   FastEthernet3/0:
-    ip_address: 
-    subnet_mask: 
+    ip_address: 9.9.9.9
+    subnet_mask: 255.255.255.255
     is_enable: False
 
 ospf:
