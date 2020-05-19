@@ -22,9 +22,14 @@ Generate the configuration:
 #   script:
 #     - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
-# Configures the devices:
-#   stage: configure
-#   script:
-#     - ansible-playbook ansible-playbooks/configure_device.yaml -i ansible-playbooks/hosts.ini
-#   only: 
-#     - master
+Configures the devices:
+  stage: configure
+  script:
+    - cat /home/gitlab-runner/builds/cicd/ansible-playbooks/snapshot/configs/Router1.cfg
+    - cat /home/gitlab-runner/builds/cicd/ansible-playbooks/snapshot/configs/Router2.cfg
+    - cat /home/gitlab-runner/builds/cicd/ansible-playbooks/snapshot/configs/Router3.cfg
+    - cat /home/gitlab-runner/builds/cicd/ansible-playbooks/snapshot/configs/Router4.cfg
+
+  #   - ansible-playbook ansible-playbooks/configure_device.yaml -i ansible-playbooks/hosts.ini
+  # only: 
+  #   - master
