@@ -12,7 +12,7 @@ stages:
 Generate the configuration:
   stage: generate
   script: 
-    - python --verison
+    - python -V
 #     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
 #   # artifacts:
 #   #   paths: /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/snapshot/configs/*.cfg
