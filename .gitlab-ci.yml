@@ -14,14 +14,12 @@ Generate the configuration:
   script: 
     - pwd
     - mkdir snapshot
-    # - pwd
-    # - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
-    # - pwd
-    # - cp -R ansible-playbooks/snapshot/* /home/gitlab-runner/builds/snapshot/configs
-  # artifacts:
-  #   paths: 
-  #     - 
-  #   expire_in: 3 day
+    - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
+    - cp -R ansible-playbooks/snapshot/* snapshot
+  artifacts:
+    paths: 
+      - snapshot
+    expire_in: 3 day
 
 # Validate the configuration:
 #   stage: validate
