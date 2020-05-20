@@ -12,12 +12,15 @@ before_script:
 Generate the configuration:
   stage: generate
   script: 
+    - mkdir snapshot
+    - cd snaphsot
+    - pwd
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
     - pwd
-    - cp -r ansible-playbooks/snapshot/configs/* /home/gitlab-runner/builds/snapshot/configs
+    # - cp -R ansible-playbooks/snapshot/* /home/gitlab-runner/builds/snapshot/configs
   # artifacts:
   #   paths: 
-  #     - /home/sudarshan/snapshot/configs/*.cfg
+  #     - 
   #   expire_in: 3 day
 
 # Validate the configuration:
