@@ -15,7 +15,7 @@ Generate the configuration:
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
   artifacts:
     paths: 
-      - /home/sudarshan/snapshot/configs/
+      - $CI_BUILDS_DIR/snapshot/configs/*
     expire_in: 3 day
 
 # Validate the configuration:
