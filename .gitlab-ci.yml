@@ -13,7 +13,8 @@ Generate the configuration:
   stage: generate
   script: 
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
-    - cp -r snapshot/configs /home/sudarshan/snapshot/configs
+    - pwd
+    # - cp -r snapshot/configs /home/sudarshan/snapshot/configs
   # artifacts:
   #   paths: 
   #     - /home/sudarshan/snapshot/configs/*.cfg
