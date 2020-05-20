@@ -13,10 +13,11 @@ Generate the configuration:
   stage: generate
   script: 
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
-  artifacts:
-    paths: 
-      - $CI_BUILDS_DIR/snapshot/configs/*
-    expire_in: 3 day
+    - cp -r snapshot/configs /home/sudarshan/snapshot/configs
+  # artifacts:
+  #   paths: 
+  #     - /home/sudarshan/snapshot/configs/*.cfg
+  #   expire_in: 3 day
 
 # Validate the configuration:
 #   stage: validate
