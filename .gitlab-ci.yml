@@ -12,7 +12,6 @@ before_script:
 Generate the configuration:
   stage: generate
   script: 
-    - pwd
     - mkdir snapshot
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
     - cp -R ansible-playbooks/snapshot/* snapshot
@@ -21,10 +20,11 @@ Generate the configuration:
       - snapshot
     expire_in: 3 day
 
-# Validate the configuration:
-#   stage: validate
-#   script:
-#     - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
+Validate the configuration:
+  stage: validate
+  script:
+    - cat /home/gitlab-runner/builds/cicd/snapshot/configs/Router1.cfg
+    # - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
 Configures the devices:
   stage: configure
