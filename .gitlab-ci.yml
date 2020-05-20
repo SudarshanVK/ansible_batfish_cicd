@@ -24,7 +24,7 @@ Validate the configuration:
   stage: validate
   script:
     - cat /home/gitlab-runner/builds/cicd/snapshot/configs/Router1.cfg
-    # - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
+    - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
 # Configures the devices:
 #   stage: configure

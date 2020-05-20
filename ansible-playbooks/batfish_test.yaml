@@ -17,7 +17,7 @@
       bf_init_snapshot:
         network: cicd-demo
         snapshot: new-config
-        snapshot_data: /var/lib/gitlab-runner/builds/rxauB3RV/0/root/ansible-batfish-cicd/ansible-playbooks/snapshot/
+        snapshot_data: /home/gitlab-runner/builds/cicd/snapshot/
         overwrite: true  
 
     - name: Batfish Assertions
