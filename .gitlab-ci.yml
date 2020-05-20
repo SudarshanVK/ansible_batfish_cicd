@@ -14,7 +14,7 @@ Generate the configuration:
   script: 
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
     - pwd
-    - cp -r ansible-playbooks/snapshot/configs/* /home/sudarshan/snapshot/configs/*
+    - cp -r ansible-playbooks/snapshot/configs/* /home/sudarshan/snapshot/configs/
   # artifacts:
   #   paths: 
   #     - /home/sudarshan/snapshot/configs/*.cfg
