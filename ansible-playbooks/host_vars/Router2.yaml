@@ -20,12 +20,7 @@ interfaces:
     ip_address: 10.10.12.2 
     subnet_mask: 255.255.255.0
     is_enable: True
-
-  FastEthernet3/0:
-    ip_address: 
-    subnet_mask: 
-    is_enable: False
-
+    
 ospf:
   process_id: 1
   router_id: 2.2.2.2
