@@ -31,5 +31,5 @@ ospf:
   router_id: 4.4.4.4
   area_id: 0
   interfaces:
-    # - FastEthernet1/0
-    - FastEthernet2/0
+    - FastEthernet1/0
+    # - FastEthernet2/0
