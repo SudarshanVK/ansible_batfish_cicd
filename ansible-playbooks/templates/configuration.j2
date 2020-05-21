@@ -4,6 +4,7 @@ router ospf {{ ospf.process_id }}
  router-id {{ospf.router_id}}
  log-adjacency-changes
 !
+exit
 {% for intf, intf_attrs in interfaces.items() %}
 interface {{intf}}
 {% if intf_attrs.ip_address is none %}
@@ -21,4 +22,5 @@ interface {{intf}}
 {% endif %}
  !
 !
+exit
 {% endfor %}
