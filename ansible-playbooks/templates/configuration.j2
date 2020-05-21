@@ -6,6 +6,7 @@ router ospf {{ ospf.process_id }}
 !
 exit
 {% for intf, intf_attrs in interfaces.items() %}
+default {{intf}}
 interface {{intf}}
 {% if intf_attrs.ip_address is none %}
  no ip address

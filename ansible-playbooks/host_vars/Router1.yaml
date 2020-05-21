@@ -28,5 +28,5 @@ ospf:
   interfaces:
     - FastEthernet1/0
     - FastEthernet2/0
-    - loopback1
+    # - loopback1
 
