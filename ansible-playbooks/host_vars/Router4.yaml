@@ -27,4 +27,4 @@ ospf:
   area_id: 0
   interfaces:
     - FastEthernet1/0
-    - FastEthernet2/0
+    # - FastEthernet2/0
