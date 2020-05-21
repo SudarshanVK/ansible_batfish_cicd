@@ -5,11 +5,6 @@ interfaces:
     ip_address: 2.2.2.2
     subnet_mask: 255.255.255.255
     is_enable: True
-
-  FastEthernet0/0:
-    ip_address: 192.168.1.192
-    subnet_mask: 255.255.255.0
-    is_enable: True
   
   FastEthernet1/0:
     ip_address: 10.10.23.2
