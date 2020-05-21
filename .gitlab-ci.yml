@@ -28,8 +28,6 @@ Validate the configuration:
 Configures the devices:
   stage: configure
   script:
-    - ansible --version
-    - pwd
     - ansible-playbook ansible-playbooks/configure_device.yaml -i ansible-playbooks/hosts.ini
   only: 
     - master
