@@ -3,14 +3,17 @@ hostname: Router2
 interfaces:
   loopback2:
     ip_address: 2.2.2.2/32
+    description: Loopback
     is_enable: True
   
   FastEthernet1/0:
     ip_address: 10.10.23.2/24
+    description: To Router3
     is_enable: True
 
   FastEthernet2/0:
     ip_address: 10.10.12.2/24
+    description: To Router1
     is_enable: True
     
 bgp:

@@ -7,6 +7,10 @@ interface {{intf}}
 {% else %}
  ip address {{ intf_attrs.ip_address | ipaddr('address') }} {{ intf_attrs.ip_address | ipaddr('netmask') }}
 {% endif %}
+{% if intf_attrs.description is none %}
+ no description
+{% else %}
+ description {{ intf_attrs.description | upper }}
 {% if intf_attrs.is_enable == True %}
  no shutdown
 {% else %}
