@@ -8,7 +8,7 @@ interfaces:
   
   FastEthernet1/0:
     ip_address: 10.10.14.1/24
-    descripion: to router4
+    description: to router4
     is_enable: True
 
   FastEthernet2/0:
