@@ -11,6 +11,7 @@ interface {{intf}}
  no description
 {% else %}
  description {{ intf_attrs.description | upper }}
+{% endif %}
 {% if intf_attrs.is_enable == True %}
  no shutdown
 {% else %}
