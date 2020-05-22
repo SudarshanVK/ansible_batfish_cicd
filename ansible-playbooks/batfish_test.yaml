@@ -26,7 +26,6 @@
           - type: assert_no_incompatible_bgp_sessions
             name: Confirm that all BGP neighbors are established
       register: bf_assert
-      ignore_errors: True
 
     - name: Display assertion result
       debug:
