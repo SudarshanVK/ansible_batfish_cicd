@@ -2,25 +2,21 @@ hostname: Router3
 
 interfaces:
   loopback3:
-    ip_address: 3.3.3.3
-    subnet_mask: 255.255.255.255
+    ip_address: 3.3.3.3/32
     is_enable: True
   
   FastEthernet1/0:
-    ip_address: 10.10.23.3
-    subnet_mask: 255.255.255.0
+    ip_address: 10.10.23.3/24
     is_enable: True
 
   FastEthernet2/0:
-    ip_address: 10.10.34.3 
-    subnet_mask: 255.255.255.0
+    ip_address: 10.10.34.3/24
     is_enable: True
 
-ospf:
-  process_id: 1
-  router_id: 3.3.3.3
-  area_id: 0
-  interfaces:
-    - FastEthernet1/0
-    - FastEthernet2/0
-    - loopback3
+bgp:
+  asn: 65003
+  neighbors:
+    - neighbor_ipaddress: 10.10.23.2
+      neighbor_asn: 65002
+    - neighbor_ipaddress: 10.10.34.4
+      neighbor_asn: 65004

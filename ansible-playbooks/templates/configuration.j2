@@ -1,28 +1,28 @@
 hostname {{hostname}}
 !
-router ospf {{ ospf.process_id }}
- router-id {{ospf.router_id}}
- log-adjacency-changes
-!
-exit
 {% for intf, intf_attrs in interfaces.items() %}
 interface {{intf}}
- no ip address
- no ip ospf {{ ospf.process_id }} area {{ ospf.area_id }}
 {% if intf_attrs.ip_address is none %}
  no ip address
 {% else %}
- ip address {{intf_attrs.ip_address}} {{intf_attrs.subnet_mask}}
+ ip address {{ intf_attrs.ip_address | ipaddr('address') }} {{ intf_attrs.ip_address | ipaddr('netmask') }}
 {% endif %}
-{% if intf in ospf.interfaces %}
- ip ospf {{ ospf.process_id }} area {{ ospf.area_id }}
-{% endif %}
-{% if intf_attrs.is_enable == False %}
- shutdown
-{% else %}
+{% if intf_attrs.is_enable == True %}
  no shutdown
+{% else %}
+ shutdown
 {% endif %}
  !
 !
 exit
 {% endfor %}
+no router bgp {{ bgp.asn }}
+router bgp {{ bgp.asn }}
+ no synchronization
+ bgp log-neighbor-changes
+ redistribute connected
+ {% for attrs in bgp.neighbors %}
+ neighbor {{ attrs.neighbor_ipaddress }} remote-as {{ attrs.neighbor_asn }}
+ {% endfor %}
+ no auto-summary
+!
