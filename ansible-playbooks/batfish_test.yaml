@@ -23,16 +23,8 @@
     - name: Batfish Assertions
       bf_assert:
         assertions:
-          - type: assert_no_incompatible_ospf_sessions
-            name: Confirm that all OSPF neighbors are established
-          - type: assert_all_flows_succeed
-            name: Confirm reachibility between R1 and R3 loopbacks on port 22
-            parameters:
-              startLocation: '(router1[loopback1])'
-              headers:
-                dstIps: '3.3.3.3'
-                ipProtocols: 'tcp'
-                dstPorts: '22'
+          - type: assert_no_incompatible_bgp_sessions
+            name: Confirm that all BGP neighbors are established
       register: bf_assert
       ignore_errors: True
 
