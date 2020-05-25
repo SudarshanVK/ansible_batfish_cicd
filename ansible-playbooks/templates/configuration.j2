@@ -21,7 +21,7 @@ interface {{intf}}
 !
 exit
 {% endfor %}
-no router bgp {{ bgp.asn }}
+{% if bgp is defined %}
 router bgp {{ bgp.asn }}
  no synchronization
  bgp log-neighbor-changes
@@ -31,3 +31,4 @@ router bgp {{ bgp.asn }}
  {% endfor %}
  no auto-summary
 !
+{% endif %}
