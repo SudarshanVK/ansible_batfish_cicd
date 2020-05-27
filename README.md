@@ -17,13 +17,13 @@ The exact sequence of commands to generate configs and run assertions are in tem
 # Sample Output
 
 ## Generate Configuration
-![alt text](images/Generate configuration.png)
+![alt text](images/generate_configuration.png)
 
 ## Batfish Test
-![alt text](images/Batfish Test.png)
+![alt text](images/batfish_test.png)
 
 ## Configure Device
-![alt text](images/Configure Device.png)
+![alt text](images/configure_devices.png)
 
 ### Note
 In a real world scenario I would use `napalm_install_config` to do a full config replace.
