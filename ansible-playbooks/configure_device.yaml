@@ -1,5 +1,8 @@
+# This playbook will configure the device based on the configuration files 
+# generated during the execution of the `generate_config.yaml` playbook
+
 ---
-- name: Configures devices with new configuration
+- name: Configures devices with generated configuration
   hosts: cisco
   gather_facts: False
 

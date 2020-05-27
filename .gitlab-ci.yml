@@ -1,30 +1,47 @@
+# Specify the path were the git repository gets cloaned to on the Gitlab-runner
 variables:
   GIT_CLONE_PATH: $CI_BUILDS_DIR/cicd
 
+# Defines the various stages of the CI/CD pipeline 
 stages:
   - generate
   - validate
   - configure
 
+# Activate the virtual environment in which the following stages will be executed
 before_script:
   - source /home/sudarshan/ansible2.9/bin/activate
 
+
+# This stage generates the relevant configuration based on the variables 
 Generate the configuration:
   stage: generate
   script: 
+# Creates a new folder 'snapshot' in the builds path to store the configurations created.
     - mkdir snapshot
+# Executes playbook to generate configuration
     - ansible-playbook ansible-playbooks/generate_config.yaml -i ansible-playbooks/hosts.ini
+# Copies the configuration files to a folder outside of the git-repo
+# so that it does not get overwritted in the next stages
     - cp -R ansible-playbooks/snapshot/* snapshot
-  artifacts:
-    paths: 
-      - snapshot
-    expire_in: 3 day
+  # artifacts:
+  #   paths: 
+  #     - snapshot
+  #   expire_in: 3 day
 
+# This Stage validates the configuration based on assertions.
+# This stage requires the batfish docker container running on the gitlab-runner
+# This stage will fail in case any of the assertions do-not pass
 Validate the configuration:
   stage: validate
   script:
+# Executes the ansible-playbook that validated the configuration
     - ansible-playbook ansible-playbooks/batfish_test.yaml -i ansible-playbooks/hosts.ini
 
+
+# This stage configures the devices based on the configuration files generated 
+# in the generate stage.
+# This stage gets executed only in the master branch.    
 Configures the devices:
   stage: configure
   script:

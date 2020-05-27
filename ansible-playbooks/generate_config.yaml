@@ -1,3 +1,6 @@
+# This playbook generates configuration based on variables mentioned in host_vars
+# and the configuration.j2 jinja template in the templates folder.
+# the generated configuration template is stored in snapshot/conifgs
 ---
   - name: Generate Router configuration files
     hosts: cisco

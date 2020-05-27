@@ -1,3 +1,7 @@
+# This playbook establishes connectivity to the batfish service and asserts 
+# condition that are mentioned in the task named 'Batfish Assertions'
+# The playbook fails if any of the assertions fail
+
 ---
 - name: Extract network device facts using Batfish and Ansible
   hosts: localhost
@@ -13,14 +17,14 @@
         host: localhost
         name: local_batfish
 
-    - name: Initialize the example network
+    - name: Initialize the network snapshot
       bf_init_snapshot:
         network: cicd-demo
         snapshot: new-config
         snapshot_data: /home/gitlab-runner/builds/cicd/snapshot/
         overwrite: true  
 
-    - name: Batfish Assertions
+    - name: Assertions
       bf_assert:
         assertions:
           - type: assert_no_incompatible_bgp_sessions

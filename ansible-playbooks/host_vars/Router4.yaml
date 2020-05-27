@@ -1,3 +1,6 @@
+# These varialbes are included implicitely when the playbook is executing any 
+# task against Router4
+
 hostname: Router4
 
 interfaces:
