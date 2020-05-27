@@ -22,7 +22,7 @@ The exact sequence of commands to generate configs and run assertions are in tem
 ## Batfish Test
 ![alt text](images/Batfish Test.png)
 
-## Batfish Test
+## Configure Device
 ![alt text](images/Configure Device.png)
 
 ### Note
