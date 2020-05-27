@@ -16,15 +16,15 @@ The exact sequence of commands to generate configs and run assertions are in tem
 
 # Sample Output
 
-## Generate Configuration
+### Generate Configuration
 ![alt text](images/generate_configuration.png)
 
-## Batfish Test
+### Batfish Test
 ![alt text](images/batfish_test.png)
 
-## Configure Device
+### Configure Device
 ![alt text](images/configure_devices.png)
 
-### Note
+#### Note
 In a real world scenario I would use `napalm_install_config` to do a full config replace.
-Do the limitation of using virtual Cisco IOS devices in EVE-NG and a lack of `flash:` memory on them, in the above example I have used `ios_config`.
+Due the limitation of using virtual Cisco IOS devices in EVE-NG and a lack of `flash:` memory on them, in the above example I have used `ios_config`.
